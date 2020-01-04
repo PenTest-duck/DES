@@ -36,14 +36,17 @@ The Decryption process is the exact same as the Encryption process, with some di
 1. The round keys are applied in reverse order (i.e. from k16 to k1)
 2. Padding is removed at the end of the Decryption process, to return the final plaintext.
 
+
 # Counter Block Chaining (CBC)
 CBC involves a 64-bit Initialisation Vector (IV), which is used in both the Encryption and Decryption processes.
+
 
 Encryption:
 1. The first block of plaintext is XORed with the IV.
 2. DES-ECB encryption is applied to the block.
 3. The resulting ciphertext of the block is used as the IV of the next block, and this process continues until all                          
    blocks have been encrypted.
+
 
 Decryption (last block decrypted first):
 1. DES-ECB decryption is applied to the block.
