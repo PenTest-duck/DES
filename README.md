@@ -27,7 +27,7 @@ In each round:
 2. XOR the round key kN with the expanded rN.
 3. Substitute the XOR-ed rN using S-boxes S1 to S8 to shrink the size from 48 bits to 32 bits, by splitting rN    into 		8 groups of 6 bits, then taking the first and last bit as the row and the middle 4 bits as the column, then finding 	 the matching entry in Sg, where g is the group number. 
 4. Permute the substituted rN using the P table.
-5. XOR L(n-1) with the permuted rN.
+5. XOR l(n-1) with the permuted rN.
 
 
 # Decryption Process
