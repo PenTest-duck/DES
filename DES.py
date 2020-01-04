@@ -173,7 +173,7 @@ def subkey_gen(c0, d0):
         shifted = left_shift(prev_d, ls_scheme[i])
         d.append(shifted[:])
 
-    #2. Permute cNdN using PC-2 Table to obtain 16 subkeys
+    #2. Permute cNdN using PC-2 Table to obtain 16 subkeys:
     #14    17   11    24     1    5
     # 3    28   15     6    21   10
     #23    19   12     4    26    8
@@ -276,7 +276,15 @@ def DES_Block(text):
     #4. Switch the left and right half-blocks
     final_block = final_block[32:64] + final_block[0:32]
 
-    #5. Inverse permute using IP-1 Table
+    #5. Inverse permute using IP-1 Table:
+    #40     8   48    16    56   24    64   32
+    #39     7   47    15    55   23    63   31
+    #38     6   46    14    54   22    62   30
+    #37     5   45    13    53   21    61   29
+    #36     4   44    12    52   20    60   28
+    #35     3   43    11    51   19    59   27
+    #34     2   42    10    50   18    58   26
+    #33     1   41     9    49   17    57   25
     block_out = permute(final_block, ip_inv_table)
     return block_out
 
